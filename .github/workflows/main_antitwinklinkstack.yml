@@ -3,6 +3,10 @@
 
 name: Build & Deploy to antitwinklinkstack
 
+concurrency:   
+  group: Build & Deploy to antitwinklinkstack
+  cancel-in-progress: true
+
 on:
   push:
     branches:
