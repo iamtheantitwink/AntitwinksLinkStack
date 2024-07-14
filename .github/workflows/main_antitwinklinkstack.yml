@@ -9,6 +9,10 @@ on:
       - main
   workflow_dispatch:
 
+concurrency: 
+   group: Build and deploy PHP app to Azure Web App - antitwinklinkstack
+   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
