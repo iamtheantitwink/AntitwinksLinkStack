@@ -29,12 +29,14 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: 'public/composer.json'
+          files: 'composer.json'
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
-        working-directory: ${{ github.workspace }}/public
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
+
+      - name: Move everything to the /public directory
+        run: mkdir public && cp -R . public/
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
