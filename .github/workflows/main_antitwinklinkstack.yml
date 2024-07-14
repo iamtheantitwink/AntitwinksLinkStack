@@ -36,6 +36,7 @@ jobs:
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
       - name: Move everything to the /public directory
+        shell: bash
         run: mkdir ${{ github.workspace }}/public && mv -fv !(public) ${{ github.workspace }}/public/
 
       - name: Zip artifact for deployment
