@@ -1,11 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build & Deploy to antitwinklinkstack
-
-concurrency:   
-  group: Build & Deploy to antitwinklinkstack
-  cancel-in-progress: true
+name: Build and deploy PHP app to Azure Web App - antitwinklinkstack
 
 on:
   push:
@@ -27,7 +23,7 @@ jobs:
 
       - name: Check if composer.json exists
         id: check_files
-        uses: andstor/file-existence-action@v3
+        uses: andstor/file-existence-action@v1
         with:
           files: 'composer.json'
 
@@ -50,7 +46,9 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -60,6 +58,13 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BFE005C5E3B0449EBA384DB426E31BFF }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_84E6C32B44FB45BEA433E8E42A72ABC7 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B114AC5D505C4881B6DFD3E8E9E09223 }}
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
@@ -67,4 +72,4 @@ jobs:
           app-name: 'antitwinklinkstack'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0A117B1460E54E6CB60D2579EEB74581 }}
+          
