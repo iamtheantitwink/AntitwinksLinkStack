@@ -938,6 +938,46 @@ class ButtonSeeder extends Seeder
                 "mb" => false,
             ],
 
+            [
+                "name" => "x",
+                "alt" => "X",
+                "exclude" => false,
+                "group" => "default",
+                "mb" => false,
+            ],
+
+            [
+                "name" => "recon",
+                "alt" => "Recon",
+                "exclude" => false,
+                "group" => "default",
+                "mb" => false,
+            ],
+
+            [
+                "name" => "bbrt",
+                "alt" => "BBRT",
+                "exclude" => false,
+                "group" => "default",
+                "mb" => false,
+            ],
+
+            [
+                "name" => "sniffies",
+                "alt" => "Sniffies",
+                "exclude" => false,
+                "group" => "default",
+                "mb" => false,
+            ],
+
+            [
+                "name" => "nkp",
+                "alt" => "Nasty Kink Pigs",
+                "exclude" => false,
+                "group" => "default",
+                "mb" => false,
+            ],
+
         ];
 
         Button::insert($buttons);

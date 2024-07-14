@@ -244,6 +244,16 @@ button:hover,
   filter: brightness(90%);
 }
 
+/* BBRT */
+.button.button-bbrt {
+  color: #000000;
+  background-color: #fc9803;
+}
+.button.button-bbrt:hover,
+.button.button-bbrt:focus {
+  filter: brightness(90%);
+}
+
 /* Behance */
 .button.button-behance {
   color: #ffffff;
@@ -951,6 +961,16 @@ button:hover,
   filter: brightness(90%);
 }
 
+/* Recon */
+.button.button-recon {
+  color: #990000;
+  background-color: #131313;
+}
+.button.button-recon.button,
+.button.button-recon:focus {
+  filter: brightness(90%);
+}
+
 /* Reddit */
 .button.button-reddit {
   color: #000000;
@@ -978,6 +998,16 @@ button.button-scribd{
 }
 .button.button-session:hover,
 .button.button-session:focus {
+  filter: brightness(90%);
+}
+
+/* Sniffies */
+.button.button-sniffies {
+  color: #ffffff;
+  background-color: #039dfc;
+}
+.button.button-sniffies.button,
+.button.button-sniffies:focus {
   filter: brightness(90%);
 }
 
@@ -1256,6 +1286,16 @@ button.button-scribd{
 }
 .button.button-wordpress:hover,
 .button.button-wordpress:focus {
+  filter: brightness(90%);
+}
+
+/* X */
+.button.button-x {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+.button.button-x.button,
+.button.button-x:focus {
   filter: brightness(90%);
 }
 
