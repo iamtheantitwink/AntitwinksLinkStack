@@ -10,6 +10,7 @@ server {
     #This is just to fix request length too long issue
     client_max_body_size 5M;
     location / {
+        rewrite ^/$ /@me/;
         index  index.php index.html index.htm hostingstart.html;
         try_files $uri $uri/ /index.php?$args;
     }

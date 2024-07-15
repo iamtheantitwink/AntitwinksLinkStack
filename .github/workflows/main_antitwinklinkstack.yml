@@ -13,6 +13,22 @@ concurrency:
    group: Build and deploy PHP app to Azure Web App - antitwinklinkstack
    cancel-in-progress: true
 
+permissions:
+  actions: write
+  attestations: write
+  checks: write
+  contents: write
+  deployments: write
+  discussions: write
+  issues: write
+  packages: write
+  pages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,8 +56,25 @@ jobs:
         run: rm -rf .git .github
 
       - name: Move everything to the /public directory
-        shell: bash
-        run: mkdir ${{ github.workspace }}/public && find . -maxdepth 1 -mindepth 1 ! -name public -exec mv {} public/ \;
+        shell: pwsh
+        run: |
+          # Define the source folder
+          $sourceFolder =  $(Get-location)
+          
+          # Define the destination subfolder
+          $destinationSubfolder = "$(Get-location)/public"
+          
+          # Create the destination subfolder if it doesn't exist
+          if (-Not (Test-Path -Path $destinationSubfolder)) {
+              New-Item -ItemType Directory -Path $destinationSubfolder
+          }
+          
+          # Move all items from the source folder to the destination subfolder
+          Get-ChildItem -Path $sourceFolder | ForEach-Object {
+              if ($_.FullName -ne $destinationSubfolder) {
+                  Move-Item -Path $_.FullName -Destination $destinationSubfolder
+              }
+          }
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -85,3 +118,12 @@ jobs:
           slot-name: 'Production'
           package: .
           
+  clean-up:
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+    - name: Clean up build artifacts
+      uses: dgmjr-actions/cleanup-build-artifacts@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}

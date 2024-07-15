@@ -30,6 +30,19 @@
 */
 
 
+@font-face {
+  font-family: 'Roadgeek Transport Heavy';
+  src: url('/assets/linkstack/fonts/roadgeek-transport-heavy.ttf') format('truetype'),
+      url('/assets/linkstack/fonts/roadgeek-transport-heavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'effortless';
+  src: url('/assets/linkstack/fonts/effortless.ttf') format('truetype'),
+      url('/assets/linkstack/fonts/effortless.woff') format('woff');
+}
+
+
 /* Rounded avatars
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -78,11 +91,11 @@ button:hover,
 }
 .button.button-primary {
   color: #FFF;
-  filter: brightness(90%) }
+  filter: brightness(60%) }
 .button.button-primary:hover,
 .button.button-primary:focus {
   color: #FFF;
-  filter: brightness(90%) }
+  filter: brightness(60%) }
 
 
 /* Brand Icons
@@ -112,7 +125,7 @@ button:hover,
 }
 .button.button-custom:hover,
 .button.button-custom:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Default (this is great for your own brand color!) */
@@ -122,7 +135,7 @@ button:hover,
 }
 .button.button-default:hover,
 .button.button-default:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* LinkStack */
@@ -137,7 +150,7 @@ button:hover,
 }
 .button.button-littlelink-custom:hover,
 .button.button-littlelink-custom:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Website */
@@ -154,7 +167,7 @@ button:hover,
 
 .button.button-web:hover,
 .button.button-web:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* ALL-INKL */
@@ -167,7 +180,7 @@ button:hover,
 }
 .button.button-all-inkl:hover,
 .button.button-all-inkl:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Amazon */
@@ -177,7 +190,7 @@ button:hover,
 }
 .button.button-amazon:hover,
 .button.button-amazon:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Apple App Store */
@@ -187,7 +200,7 @@ button:hover,
 }
 .button.button-appstore:hover,
 .button.button-appstore:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Apple Books */
@@ -203,7 +216,7 @@ button:hover,
 }
 .button.button-apple-books:hover,
 .button.button-apple-books:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Apple Music */
@@ -217,7 +230,7 @@ button:hover,
 }
 .button.button-apple-music:hover,
 .button.button-apple-music:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Apple Podcasts */
@@ -231,7 +244,7 @@ button:hover,
 }
 .button.button-apple-music:hover,
 .button.button-apple-music:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Bandcamp */
@@ -241,13 +254,25 @@ button:hover,
 }
 .button.button-bandcamp:hover,
 .button.button-bandcamp:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* BBRT */
 .button.button-bbrt {
   color: #000000;
   background-color: #fc9803;
+  font-size: 0px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.button.button-bbrt:hover,
+.button.button-bbrt:focus {
+  filter: brightness(90%);
+}
+.button.button-bbrt img {
+  width: auto;    /* Maintain aspect ratio */
+  height: 43px;   /* Maintain aspect ratio */
+  opacity: 1;
 }
 .button.button-bbrt:hover,
 .button.button-bbrt:focus {
@@ -265,7 +290,7 @@ button:hover,
 }
 .button.button-behance:hover,
 .button.button-behance:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* BookWyrm */
@@ -278,7 +303,7 @@ button:hover,
 }
 .button.button-bookwyrm:hover,
 .button.button-bookwyrm:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Booth */
@@ -288,7 +313,7 @@ button:hover,
 }
 .button.button-booth:hover,
 .button.button-booth:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Bluesky */
@@ -299,7 +324,7 @@ button:hover,
 }
 .button.button-bluesky:hover,
 .button.button-bluesky:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Briar */
@@ -309,7 +334,7 @@ button:hover,
 }
 .button.button-briar:hover,
 .button.button-briar:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Buy Me a Coffee */
@@ -319,7 +344,7 @@ button:hover,
 }
 .button.button-coffee:hover,
 .button.button-coffee:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Cash App */
@@ -333,7 +358,7 @@ button:hover,
 }
 .button.button-cashapp:hover,
 .button.button-cashapp:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Castopod */
@@ -343,7 +368,7 @@ button:hover,
 }
 .button.button-castopod:hover,
 .button.button-castopod:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Codeberg */
@@ -353,7 +378,7 @@ button:hover,
 }
 .button.button-codeberg:hover,
 .button.button-codeberg:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Codepen */
@@ -363,7 +388,7 @@ button:hover,
 }
 .button.button-codepen:hover,
 .button.button-codepen:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Cryptpad */
@@ -373,7 +398,7 @@ button:hover,
 }
 .button.button-cryptpad:hover,
 .button.button-cryptpad:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* DEV */
@@ -383,7 +408,7 @@ button:hover,
 }
 .button.button-dev-to:hover,
 .button.button-dev-to:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Deezer */
@@ -407,7 +432,7 @@ button:hover,
 }
 .button.button-deezer:hover,
 .button.button-deezer:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Discord */
@@ -417,7 +442,7 @@ button:hover,
 }
 .button.button-discord:hover,
 .button.button-discord:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Epic Games */
@@ -427,7 +452,7 @@ button:hover,
 }
 .button.button-epic-games:hover,
 .button.button-epic-games:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Etsy */
@@ -437,7 +462,7 @@ button:hover,
 }
 .button.button-etsy:hover,
 .button.button-etsy:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Facebook */
@@ -447,7 +472,7 @@ button:hover,
 }
 .button.button-facebook:hover,
 .button.button-facebook:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Facebook Messenger */
@@ -465,7 +490,7 @@ button:hover,
 }
 .button.button-messenger:hover,
 .button.button-messenger:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Figma */
@@ -475,7 +500,7 @@ button:hover,
 }
 .button.button-figma:hover,
 .button.button-figma:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Firefish */
@@ -492,7 +517,7 @@ button:hover,
 }
 .button.button-firefish:hover,
 .button.button-firefish:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Firefox */
@@ -502,7 +527,7 @@ button:hover,
 }
 .button.button-firefox:hover,
 .button.button-firefox:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 
@@ -513,7 +538,7 @@ button:hover,
 }
 .button.button-flickr:hover,
 .button.button-flickr:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Friendi.ca */
@@ -523,7 +548,7 @@ button:hover,
 }
 .button.button-friendica:hover,
 .button.button-friendica:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Funkwhale */
@@ -533,7 +558,7 @@ button:hover,
 }
 .button.button-funkwhale:hover,
 .button.button-funkwhale:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* F-Droid */
@@ -549,7 +574,7 @@ button:hover,
 }
 .button.button-f-droid:hover,
 .button.button-f-droid:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* FurAffinity */
@@ -559,7 +584,7 @@ button:hover,
 }
 .button.button-furaffinity:hover,
 .button.button-furaffinity:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Github */
@@ -569,7 +594,7 @@ button:hover,
 }
 .button.button-github:hover,
 .button.button-github:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Gitlab */
@@ -579,7 +604,7 @@ button:hover,
 }
 .button.button-gitlab:hover,
 .button.button-gitlab:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Goodreads */
@@ -589,7 +614,7 @@ button:hover,
 }
 .button.button-goodreads:hover,
 .button.button-goodreads:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Google Drive */
@@ -599,7 +624,7 @@ button:hover,
 }
 .button.button-gdrive:hover,
 .button.button-gdrive:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Google Play Store */
@@ -609,7 +634,7 @@ button:hover,
 }
 .button.button-playstore:hover,
 .button.button-playstore:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* HearThis.at */
@@ -619,7 +644,7 @@ button:hover,
 }
 .button.button-hearthisat:hover,
 .button.button-hearthisat:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Humble Bundle */
@@ -629,7 +654,7 @@ button:hover,
 }
 .button.button-humble-bundle:hover,
 .button.button-humble-bundle:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Instagram */
@@ -644,7 +669,7 @@ button:hover,
 }
 .button.button-instagram:hover,
 .button.button-instagram:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Itaku */
@@ -654,7 +679,7 @@ button:hover,
 }
 .button.button-itaku:hover,
 .button.button-itaku:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* itch.io */
@@ -664,7 +689,7 @@ button:hover,
 }
 .button.button-itchio:hover,
 .button.button-itchio:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* kickstarter */
@@ -674,7 +699,7 @@ button:hover,
 }
 .button.button-kickstarter:hover,
 .button.button-kickstarter:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Kit */
@@ -684,7 +709,7 @@ button:hover,
 }
 .button.button-kit:hover,
 .button.button-kit:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Ko-fi */
@@ -694,7 +719,7 @@ button:hover,
 }
 .button.button-ko-fi:hover,
 .button.button-ko-fi:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* last.fm */
@@ -704,7 +729,7 @@ button:hover,
 }
 .button.button-last-fm:hover,
 .button.button-last-fm:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Lemmy */
@@ -717,7 +742,7 @@ button:hover,
 }
 .button.button-lemmy:hover,
 .button.button-lemmy:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Letterboxd */
@@ -727,7 +752,7 @@ button:hover,
 }
 .button.button-letterboxd:hover,
 .button.button-letterboxd:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Liberapay */
@@ -737,7 +762,7 @@ button:hover,
 }
 .button.button-liberapay:hover,
 .button.button-liberapay:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* LinkedIn */
@@ -747,7 +772,7 @@ button:hover,
 }
 .button.button-linkedin:hover,
 .button.button-linkedin:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Matrix */
@@ -760,7 +785,7 @@ button:hover,
 }
 .button.button-matrix:hover,
 .button.button-matrix:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Mastodon */
@@ -770,7 +795,7 @@ button:hover,
 }
 .button.button-mastodon:hover,
 .button.button-mastodon:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Medium */
@@ -780,7 +805,7 @@ button:hover,
 }
 .button.button-medium:hover,
 .button.button-medium:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Misskey */
@@ -790,7 +815,23 @@ button:hover,
 }
 .button.button-misskey:hover,
 .button.button-misskey:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
+}
+
+/* Nasty Kink Pigs */
+.button.button-nkp {
+  color: #22c7fc;
+  background-color: darkslategray;
+  font-family: 'effortless';
+  text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+.button.button-nkp img {
+  display: none;
+}
+.button.button-nkp:hover,
+.button.button-nkp:focus {
+  filter: brightness(60%);
 }
 
 /* Notion */
@@ -806,7 +847,20 @@ button:hover,
 }
 .button.button-notion:hover,
 .button.button-notion:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
+}
+
+/* Not Gonna Lie */
+.button.button-ngl {
+  background-image: linear-gradient(45deg, #cc0066, #ff3333, #ff6600);
+  color: white;
+}
+.button-ngl img {
+  width: 40px;
+}
+.button.button-ngl:hover,
+.button.button-ngl:focus {
+  filter: brightness(60%);
 }
 
 /* Odysee */
@@ -825,7 +879,7 @@ button:hover,
 }
 .button.button-odysee:hover,
 .button.button-odysee:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* OpenStreetMap */
@@ -835,7 +889,7 @@ button:hover,
 }
 .button.button-openstreetmap:hover,
 .button.button-openstreetmap:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Owncast */
@@ -848,7 +902,7 @@ button:hover,
 }
 .button.button-owncast:hover,
 .button.button-owncast:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Patreon */
@@ -858,7 +912,7 @@ button:hover,
 }
 .button.button-patreon:hover,
 .button.button-patreon:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* PayPal */
@@ -868,7 +922,7 @@ button:hover,
 }
 .button.button-paypal:hover,
 .button.button-paypal:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Peertube */
@@ -878,7 +932,7 @@ button:hover,
 }
 .button.button-peertube:hover,
 .button.button-peertube:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Picarto */
@@ -888,7 +942,7 @@ button:hover,
 }
 .button.button-picarto:hover,
 .button.button-picarto:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Pinterest */
@@ -898,7 +952,7 @@ button:hover,
 }
 .button.button-pinterest:hover,
 .button.button-pinterest:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Pixelfed */
@@ -915,7 +969,7 @@ button:hover,
 }
 .button.button-pixelfed:hover,
 .button.button-pixelfed:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Piwigo */
@@ -925,7 +979,7 @@ button:hover,
 }
 .button.button-piwigo:hover,
 .button.button-piwigo:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Pleroma */
@@ -935,7 +989,7 @@ button:hover,
 }
 .button.button-pleroma:hover,
 .button.button-pleroma:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Producthunt */
@@ -948,7 +1002,7 @@ button:hover,
 }
 .button.button-producthunt:hover,
 .button.button-producthunt:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* PronounsPage */
@@ -958,17 +1012,19 @@ button:hover,
 }
 .button.button-pronounspage:hover,
 .button.button-pronounspage:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Recon */
 .button.button-recon {
-  color: #990000;
+  color: black;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   background-color: #131313;
 }
-.button.button-recon.button,
+.button.button-recon.button:hover,
 .button.button-recon:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Reddit */
@@ -978,7 +1034,7 @@ button:hover,
 }
 .button.button-reddit:hover,
 .button.button-reddit:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Scribd */
@@ -988,7 +1044,7 @@ button.button-scribd{
 }
 .button.button-scribd:hover,
 .button.button-scribd:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Session */
@@ -998,17 +1054,19 @@ button.button-scribd{
 }
 .button.button-session:hover,
 .button.button-session:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
+
 
 /* Sniffies */
 .button.button-sniffies {
   color: #ffffff;
   background-color: #039dfc;
+  font-family: 'Roadgeek Transport Heavy'
 }
-.button.button-sniffies.button,
+.button.button-sniffies.button:hover,
 .button.button-sniffies:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Signal */
@@ -1018,7 +1076,7 @@ button.button-scribd{
 }
 .button.button-signal:hover,
 .button.button-signal:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Simplex */
@@ -1028,7 +1086,7 @@ button.button-scribd{
 }
 .button.button-simplex:hover,
 .button.button-simplex:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Skoob */
@@ -1038,7 +1096,7 @@ button.button-scribd{
 }
 .button.button-skoob:hover,
 .button.button-skoob:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Snapchat */
@@ -1048,7 +1106,7 @@ button.button-scribd{
 }
 .button.button-snapchat:hover,
 .button.button-snapchat:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* SoundCloud */
@@ -1058,7 +1116,7 @@ button.button-scribd{
 }
 .button.button-soundcloud:hover,
 .button.button-soundcloud:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Spotify */
@@ -1068,7 +1126,7 @@ button.button-scribd{
 }
 .button.button-spotify:hover,
 .button.button-spotify:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Steam */
@@ -1078,7 +1136,7 @@ button.button-scribd{
 }
 .button.button-steam:hover,
 .button.button-steam:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Strava */
@@ -1088,7 +1146,7 @@ button.button-scribd{
 }
 .button.button-strava:hover,
 .button.button-strava:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Streams */
@@ -1098,7 +1156,7 @@ button.button-scribd{
 }
 .button.button-streams:hover,
 .button.button-streams:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Telegram */
@@ -1108,7 +1166,7 @@ button.button-scribd{
 }
 .button.button-telegram:hover,
 .button.button-telegram:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Threema */
@@ -1118,7 +1176,17 @@ button.button-scribd{
 }
 .button.button-threema:hover,
 .button.button-threema:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
+}
+
+/* The Super Sniffer */
+.button.button-thesupersniffer {
+  background-image: linear-gradient(90deg, #c60b2e, #2e364f);
+  color: white;
+}
+.button.button-thesupersniffer:hover,
+.button.button-thesupersniffer:focus {
+  filter: brightness(60%);
 }
 
 /* Throne */
@@ -1128,7 +1196,7 @@ button.button-scribd{
 }
 .button.button-throne:hover,
 .button.button-throne:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* TikTok */
@@ -1138,7 +1206,7 @@ button.button-scribd{
 }
 .button.button-tiktok:hover,
 .button.button-tiktok:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Trakt */
@@ -1148,7 +1216,7 @@ button.button-scribd{
 }
 .button.button-trakt:hover,
 .button.button-trakt:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Trello */
@@ -1158,7 +1226,7 @@ button.button-scribd{
 }
 .button.button-trello:hover,
 .button.button-trello:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Tumblr */
@@ -1168,7 +1236,7 @@ button.button-scribd{
 }
 .button.button-tumblr:hover,
 .button.button-tumblr:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Twitch */
@@ -1178,7 +1246,7 @@ button.button-scribd{
 }
 .button.button-twitch:hover,
 .button.button-twitch:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Twitter */
@@ -1188,7 +1256,7 @@ button.button-scribd{
 }
 .button.button-twitter:hover,
 .button.button-twitter:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Unity */
@@ -1201,7 +1269,7 @@ button.button-scribd{
 }
 .button.button-unity:hover,
 .button.button-unity:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Unraid */
@@ -1215,7 +1283,7 @@ button.button-scribd{
 }
 .button.button-unraid:hover,
 .button.button-unraid:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Untappd */
@@ -1225,7 +1293,7 @@ button.button-scribd{
 }
 .button.button-untappd:hover,
 .button.button-untappd:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Upptime */
@@ -1235,7 +1303,7 @@ button.button-scribd{
 }
 .button.button-upptime:hover,
 .button.button-upptime:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Venmo */
@@ -1245,7 +1313,7 @@ button.button-scribd{
 }
 .button.button-venmo:hover,
 .button.button-venmo:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Vimeo */
@@ -1255,7 +1323,7 @@ button.button-scribd{
 }
 .button.button-vimeo:hover,
 .button.button-vimeo:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* VRChat */
@@ -1266,7 +1334,7 @@ button.button-scribd{
 }
 .button.button-vrchat:hover,
 .button.button-vrchat:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* WhatsApp */
@@ -1276,7 +1344,7 @@ button.button-scribd{
 }
 .button.button-whatsapp:hover,
 .button.button-whatsapp:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Wordpress */
@@ -1286,7 +1354,7 @@ button.button-scribd{
 }
 .button.button-wordpress:hover,
 .button.button-wordpress:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* X */
@@ -1296,7 +1364,7 @@ button.button-scribd{
 }
 .button.button-x.button,
 .button.button-x:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* Xing */
@@ -1306,7 +1374,7 @@ button.button-scribd{
 }
 .button.button-xing:hover,
 .button.button-xing:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* YouTube V2 */
@@ -1316,7 +1384,7 @@ button.button-scribd{
 }
 .button.button-youtube:hover,
 .button.button-youtube:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* YouTube Music */
@@ -1326,7 +1394,7 @@ button.button-scribd{
 }
 .button.button-youtube-music:hover,
 .button.button-youtube-music:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
 
 /* LinkStack */
@@ -1337,5 +1405,5 @@ button.button-scribd{
 }
 .button.button-linkstack:hover,
 .button.button-linkstack:focus {
-  filter: brightness(90%);
+  filter: brightness(60%);
 }
