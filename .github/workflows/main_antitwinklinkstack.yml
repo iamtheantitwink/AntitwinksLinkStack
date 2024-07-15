@@ -35,6 +35,10 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
+      - name: Remove .git & .github directories
+        shell: bash
+        run: rm -rf .git .github
+
       - name: Move everything to the /public directory
         shell: bash
         run: mkdir ${{ github.workspace }}/public && find . -maxdepth 1 -mindepth 1 ! -name public -exec mv {} public/ \;
