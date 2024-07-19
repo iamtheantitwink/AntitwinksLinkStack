@@ -33,12 +33,16 @@
 @font-face {
   font-family: 'Roadgeek Transport Heavy';
   src: url('/assets/linkstack/fonts/roadgeek-transport-heavy.ttf') format('truetype'),
+      url('/assets/linkstack/fonts/roadgeek-transport-heavy.woff2') format('woff2'),
+      url('/assets/linkstack/fonts/roadgeek-transport-heavy.otf') format('otf'),
       url('/assets/linkstack/fonts/roadgeek-transport-heavy.woff') format('woff');
 }
 
 @font-face {
   font-family: 'effortless';
   src: url('/assets/linkstack/fonts/effortless.ttf') format('truetype'),
+      url('/assets/linkstack/fonts/effortless.woff2') format('woff2'),
+      url('/assets/linkstack/fonts/effortless.otf') format('otf'),
       url('/assets/linkstack/fonts/effortless.woff') format('woff');
 }
 
