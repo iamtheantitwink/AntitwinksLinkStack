@@ -76,14 +76,14 @@ jobs:
       #         }
       #     }
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+      # - name: Zip artifact for deployment
+      #   run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: php-app
-          path: release.zip
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -106,9 +106,8 @@ jobs:
         with:
           app-name: 'antitwinklinkstack'
           slot-name: 'Production'
-          package: release.zip
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5093A740C8CE4D53B0CD91B7B5F8462C }}
-          type: ZIP
           target-path: /home/site/wwwroot/public
           restart: true
           clean: true
