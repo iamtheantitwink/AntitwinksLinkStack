@@ -9,26 +9,6 @@ on:
       - main
   workflow_dispatch:
 
-concurrency: 
-   group: Build and deploy PHP app to Azure Web App - antitwinklinkstack
-   cancel-in-progress: true
-
-permissions:
-  actions: write
-  attestations: write
-  checks: write
-  contents: write
-  deployments: write
-  discussions: write
-  issues: write
-  packages: write
-  pages: write
-  pull-requests: write
-  repository-projects: write
-  security-events: write
-  statuses: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,38 +23,13 @@ jobs:
 
       - name: Check if composer.json exists
         id: check_files
-        uses: andstor/file-existence-action@v3
+        uses: andstor/file-existence-action@v1
         with:
           files: 'composer.json'
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
-
-      - name: Remove .git & .github directories
-        shell: bash
-        run: rm -rf .git .github
-
-      - name: Move everything to the /public directory
-        shell: pwsh
-        run: |
-          # Define the source folder
-          $sourceFolder =  $(Get-location)
-          
-          # Define the destination subfolder
-          $destinationSubfolder = "$(Get-location)/public"
-          
-          # Create the destination subfolder if it doesn't exist
-          if (-Not (Test-Path -Path $destinationSubfolder)) {
-              New-Item -ItemType Directory -Path $destinationSubfolder
-          }
-          
-          # Move all items from the source folder to the destination subfolder
-          Get-ChildItem -Path $sourceFolder | ForEach-Object {
-              if ($_.FullName -ne $destinationSubfolder) {
-                  Move-Item -Path $_.FullName -Destination $destinationSubfolder
-              }
-          }
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -106,9 +61,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BFE005C5E3B0449EBA384DB426E31BFF }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_84E6C32B44FB45BEA433E8E42A72ABC7 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_B114AC5D505C4881B6DFD3E8E9E09223 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1AB29A399DF64F6E8DCE1830DE5E53D8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DD2E8FF46DBC42708F141C11680AB499 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4DCF134B23044AD59AE332B6E3C3E18B }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -118,12 +73,3 @@ jobs:
           slot-name: 'Production'
           package: .
           
-  clean-up:
-    runs-on: ubuntu-latest
-    needs: deploy
-
-    steps:
-    - name: Clean up build artifacts
-      uses: dgmjr-actions/cleanup-build-artifacts@main
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
