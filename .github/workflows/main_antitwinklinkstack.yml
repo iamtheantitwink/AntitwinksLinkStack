@@ -9,6 +9,26 @@ on:
       - main
   workflow_dispatch:
 
+concurrency: 
+   group: Build and deploy PHP app to Azure Web App - antitwinklinkstack
+   cancel-in-progress: true
+
+permissions:
+  actions: write
+  attestations: write
+  checks: write
+  contents: write
+  deployments: write
+  discussions: write
+  issues: write
+  packages: write
+  pages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,13 +43,38 @@ jobs:
 
       - name: Check if composer.json exists
         id: check_files
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v3
         with:
           files: 'composer.json'
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
+
+      - name: Remove .git & .github directories
+        shell: bash
+        run: rm -rf .git .github
+
+      # - name: Move everything to the /public directory
+      #   shell: pwsh
+      #   run: |
+      #     # Define the source folder
+      #     $sourceFolder =  $(Get-location)
+          
+      #     # Define the destination subfolder
+      #     $destinationSubfolder = "$(Get-location)/public"
+          
+      #     # Create the destination subfolder if it doesn't exist
+      #     if (-Not (Test-Path -Path $destinationSubfolder)) {
+      #         New-Item -ItemType Directory -Path $destinationSubfolder
+      #     }
+          
+      #     # Move all items from the source folder to the destination subfolder
+      #     Get-ChildItem -Path $sourceFolder | ForEach-Object {
+      #         if ($_.FullName -ne $destinationSubfolder) {
+      #             Move-Item -Path $_.FullName -Destination $destinationSubfolder
+      #         }
+      #     }
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -46,15 +91,14 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: php-app
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
       
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -62,5 +106,9 @@ jobs:
         with:
           app-name: 'antitwinklinkstack'
           slot-name: 'Production'
-          package: .
+          package: release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5093A740C8CE4D53B0CD91B7B5F8462C }}
+          type: ZIP
+          target-path: /home/site/wwwroot/public
+          restart: true
+          clean: true
