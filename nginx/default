@@ -15,14 +15,6 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
-    location = / {
-        return 301 /@me;
-    }
-
-    location = /.env {
-        return 401 "You're not allowed to fucking see that!";
-    }
-
     location = /favicon.ico {
         log_not_found off; access_log off;
     }
