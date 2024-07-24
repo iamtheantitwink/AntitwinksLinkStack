@@ -1,46 +1,45 @@
 server {
-    #proxy_cache cache;
-    #proxy_cache_valid 200 1s;
     listen 8080;
     listen [::]:8080;
     root /home/site/wwwroot/public;
     index index.php index.html index.htm;
     server_name example.com www.example.com;
     port_in_redirect off;
-    #This is just to fix request length too long issue
+
+    # Fix request length too long issue
     client_max_body_size 5M;
+
     location / {
         rewrite ^/$ /@me/;
-        index  index.php index.html index.htm hostingstart.html;
+        index index.php index.html index.htm hostingstart.html;
         try_files $uri $uri/ /index.php?$args;
     }
 
-    location = /.env {
-        deny all;
-    }
-
     location = /favicon.ico {
-        log_not_found off; access_log off;
-    }
-    location = /robots.txt {
-        log_not_found off; access_log off;
+        log_not_found off;
+        access_log off;
     }
 
-    # redirect server error pages to the static page /50x.html
-    #
-    #error_page   500 502 503 504  /50x.html;
+    location = /robots.txt {
+        log_not_found off;
+        access_log off;
+    }
+
+    # Redirect server error pages to the static page /50x.html
+    #error_page 500 502 503 504 /50x.html;
     #location = /50x.html {
-    #root   /html/;
+    #    root /html/;
     #}
 
-    # Disable .git directory
-    location ~ /\.git {
+    # Deny access to sensitive files and redirect to custom 403 page
+    location ~* /\.(git|svn|env|dll|exe|log|db)$ {
         deny all;
+        error_page 403 /errors/403.html;
         access_log off;
         log_not_found off;
     }
 
-    # Add locations of phpmyadmin here.
+    # Add locations of phpmyadmin here
     location ~* [^/]\.php(/|$) {
         fastcgi_split_path_info ^(.+?\.[Pp][Hh][Pp])(|/.*)$;
         fastcgi_pass 127.0.0.1:9000;
