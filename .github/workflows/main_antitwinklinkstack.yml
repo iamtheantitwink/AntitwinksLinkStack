@@ -75,7 +75,7 @@ jobs:
         with:
           app-name: 'antitwinklinkstack'
           slot-name: 'Production'
-          package: release.zip
+          package: . # release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5093A740C8CE4D53B0CD91B7B5F8462C }}
           target-path: /home/site/wwwroot/public
           # restart: true
