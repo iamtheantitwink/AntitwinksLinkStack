@@ -15,6 +15,10 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
+    location = .env {
+        deny all;
+    }
+
     location = /favicon.ico {
         log_not_found off; access_log off;
     }
