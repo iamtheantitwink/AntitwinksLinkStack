@@ -79,5 +79,5 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5093A740C8CE4D53B0CD91B7B5F8462C }}
           target-path: /home/site/wwwroot/public
           restart: true
-          clean: true
+          # clean: true
           # type: ZIP
