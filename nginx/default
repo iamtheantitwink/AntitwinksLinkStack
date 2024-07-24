@@ -15,7 +15,7 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
-    location = .env {
+    location = /.env {
         deny all;
     }
 
