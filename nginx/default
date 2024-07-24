@@ -10,9 +10,12 @@ server {
     client_max_body_size 5M;
 
     location / {
-        rewrite ^/$ /@me/;
         index index.php index.html index.htm hostingstart.html;
         try_files $uri $uri/ /index.php?$args;
+    }
+
+    location = / {
+        return 307 /@me;
     }
 
     location = /favicon.ico {
