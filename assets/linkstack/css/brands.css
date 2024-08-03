@@ -39,11 +39,11 @@
 }
 
 @font-face {
-  font-family: 'effortless';
-  src: url('/assets/linkstack/fonts/effortless.ttf') format('truetype'),
-      url('/assets/linkstack/fonts/effortless.woff2') format('woff2'),
-      url('/assets/linkstack/fonts/effortless.otf') format('otf'),
-      url('/assets/linkstack/fonts/effortless.woff') format('woff');
+  font-family: 'Klavika';
+  src: url('/assets/linkstack/fonts/Klavika/klavika-bold.ttf') format('truetype'),
+      url('/assets/linkstack/fonts/Klavika/klavika-bold.woff2') format('woff2'),
+      url('/assets/linkstack/fonts/Klavika/klavika-bold.otf') format('otf'),
+      url('/assets/linkstack/fonts/Klavika/klavika-bold.woff') format('woff');
 }
 
 
@@ -473,6 +473,8 @@ button:hover,
 .button.button-facebook {
   color: #FFFFFF;
   background-color: #1877f2;
+  font-family: 'Klavika';
+  text-transform: lowercase;
 }
 .button.button-facebook:hover,
 .button.button-facebook:focus {
