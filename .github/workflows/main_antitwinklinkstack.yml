@@ -44,8 +44,8 @@ jobs:
         shell: bash
         run: rm -rf .git .github
 
-      # - name: Zip artifact for deployment
-      #   run: zip release.zip ./* -r
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -r
 
         # You may pin to the exact commit or the version.
         # uses: LanceMcCarthy/Action-AzureBlobUpload@36804997c22518c2f7d0a508d6ff5593d4b4722e
@@ -75,9 +75,9 @@ jobs:
         with:
           app-name: 'antitwinklinkstack'
           slot-name: 'Production'
-          package: . # release.zip
+          package: release.zip
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5093A740C8CE4D53B0CD91B7B5F8462C }}
           target-path: /home/site/wwwroot/public
           # restart: true
           # clean: true
-          # type: ZIP
+          type: ZIP
