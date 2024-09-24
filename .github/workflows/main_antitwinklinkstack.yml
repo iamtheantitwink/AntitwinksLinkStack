@@ -70,7 +70,7 @@ jobs:
           delete_if_exists: true # optional
       
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v3.0.1
+        uses: azure/webapps-deploy@v3.0.2
         id: deploy-to-webapp
         with:
           app-name: 'antitwinklinkstack'
